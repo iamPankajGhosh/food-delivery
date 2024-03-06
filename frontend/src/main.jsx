@@ -11,6 +11,8 @@ import Root from "./routes/Root.jsx";
 import Home from "./routes/Home.jsx";
 import Login from "./routes/Login.jsx";
 import Signup from "./routes/Signup.jsx";
+import Dishes from "./routes/Dishes.jsx";
+import AuthLayout from "./components/AuthLayout.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +20,14 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
+      <Route
+        path="dishes"
+        element={
+          <AuthLayout>
+            <Dishes />
+          </AuthLayout>
+        }
+      />
     </Route>
   )
 );
